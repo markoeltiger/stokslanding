@@ -29,7 +29,7 @@ function App() {
           <div className="container mx-auto px-4 py-4 flex justify-between items-center">
             <div className="flex items-center gap-2">
               <img
-                src="https://raw.githubusercontent.com/plcoding/stoks/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+                src="https://raw.githubusercontent.com/markoeltiger/stokslanding/refs/heads/main/src/res/stoksLogo.png"
                 alt="Stoks Logo"
                 className="w-8 h-8"
               />
@@ -69,7 +69,7 @@ function App() {
             </div>
             <div className="order-1 md:order-2">
               <img
-                src="https://raw.githubusercontent.com/plcoding/stoks/main/screenshots/screenshot_1.png"
+                src="https://raw.githubusercontent.com/markoeltiger/stokslanding/refs/heads/main/src/res/screenshot.png"
                 alt="Stoks App Screenshot"
                 className="w-full max-w-md mx-auto rounded-2xl shadow-2xl"
               />
@@ -113,12 +113,12 @@ function App() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <img
-                src="https://raw.githubusercontent.com/plcoding/stoks/main/screenshots/screenshot_2.png"
+                src="https://raw.githubusercontent.com/markoeltiger/stokslanding/refs/heads/main/src/res/chatwithstoks.png"
                 alt="Stoks AI Chat"
                 className="w-full rounded-2xl shadow-xl"
               />
               <img
-                src="https://raw.githubusercontent.com/plcoding/stoks/main/screenshots/screenshot_3.png"
+                src="https://raw.githubusercontent.com/markoeltiger/stokslanding/refs/heads/main/src/res/screenshot.png"
                 alt="Stoks Market View"
                 className="w-full rounded-2xl shadow-xl"
               />
@@ -182,7 +182,7 @@ function App() {
               <div>
                 <div className="flex items-center gap-2 mb-4">
                   <img
-                    src="https://raw.githubusercontent.com/plcoding/stoks/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+                    src="https://raw.githubusercontent.com/markoeltiger/stokslanding/refs/heads/main/src/res/stoksLogo.png"
                     alt="Stoks Logo"
                     className="w-8 h-8"
                   />
