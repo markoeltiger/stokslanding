@@ -78,11 +78,11 @@ function FAQItem({ question, answer }: FAQItemProps) {
 }
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
-  // Add useEffect to set document title
   useEffect(() => {
     document.title = "Stoks AI";
+    document.documentElement.classList.add('dark');
   }, []);
 
   const toggleDarkMode = () => {
@@ -100,7 +100,7 @@ function App() {
               <img
                 src="https://raw.githubusercontent.com/markoeltiger/stokslanding/refs/heads/main/src/res/stoksLogo.png"
                 alt="Stoks Logo"
-                className="w-8 h-8"
+                className="w-12 h-12"
               />
               <span className="text-2xl font-bold text-blue-900 dark:text-gold">Stoks</span>
             </div>
@@ -140,7 +140,7 @@ function App() {
               <img
                 src="https://raw.githubusercontent.com/markoeltiger/stokslanding/refs/heads/main/src/res/screenshot.png"
                 alt="Stoks App Screenshot"
-                className="w-full max-w-md mx-auto rounded-2xl shadow-2xl"
+                className="w-full max-w-sm mx-auto rounded-2xl shadow-2xl"
               />
             </div>
           </div>
@@ -184,12 +184,12 @@ function App() {
               <img
                 src="https://raw.githubusercontent.com/markoeltiger/stokslanding/refs/heads/main/src/res/chatwithstoks.png"
                 alt="Stoks AI Chat"
-                className="w-full rounded-2xl shadow-xl"
+                className="w-full max-w-sm mx-auto rounded-2xl shadow-xl"
               />
               <img
                 src="https://raw.githubusercontent.com/markoeltiger/stokslanding/refs/heads/main/src/res/screenshot.png"
                 alt="Stoks Market View"
-                className="w-full rounded-2xl shadow-xl"
+                className="w-full max-w-sm mx-auto rounded-2xl shadow-xl"
               />
             </div>
           </div>
