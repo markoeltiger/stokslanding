@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Download,
   DollarSign,
@@ -13,8 +13,77 @@ import {
   Facebook,
 } from 'lucide-react';
 
+interface FeatureCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+function FeatureCard({ icon, title, description }: FeatureCardProps) {
+  return (
+    <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl text-right">
+      <div className="text-blue-900 dark:text-gold mb-4">{icon}</div>
+      <h3 className="text-xl font-bold text-blue-900 dark:text-white mb-2">{title}</h3>
+      <p className="text-gray-600 dark:text-gray-300">{description}</p>
+    </div>
+  );
+}
+
+interface StepCardProps {
+  number: string;
+  title: string;
+  description: string;
+}
+
+function StepCard({ number, title, description }: StepCardProps) {
+  return (
+    <div className="text-center">
+      <div className="w-16 h-16 bg-blue-900 dark:bg-gold text-white dark:text-gray-900 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+        {number}
+      </div>
+      <h3 className="text-xl font-bold text-blue-900 dark:text-white mb-2">{title}</h3>
+      <p className="text-gray-600 dark:text-gray-300">{description}</p>
+    </div>
+  );
+}
+
+interface FAQItemProps {
+  question: string;
+  answer: string;
+}
+
+function FAQItem({ question, answer }: FAQItemProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="border-b border-gray-200 dark:border-gray-700">
+      <button
+        className="w-full text-right py-4 flex justify-between items-center"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <ChevronDown
+          className={`w-6 h-6 text-blue-900 dark:text-gold transform transition-transform ${
+            isOpen ? 'rotate-180' : ''
+          }`}
+        />
+        <span className="text-lg font-semibold text-blue-900 dark:text-white">{question}</span>
+      </button>
+      {isOpen && (
+        <div className="pb-4 text-right">
+          <p className="text-gray-600 dark:text-gray-300">{answer}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Add useEffect to set document title
+  useEffect(() => {
+    document.title = "Stoks AI";
+  }, []);
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
@@ -244,53 +313,6 @@ function App() {
           </div>
         </footer>
       </div>
-    </div>
-  );
-}
-
-function FeatureCard({ icon, title, description }) {
-  return (
-    <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl text-right">
-      <div className="text-blue-900 dark:text-gold mb-4">{icon}</div>
-      <h3 className="text-xl font-bold text-blue-900 dark:text-white mb-2">{title}</h3>
-      <p className="text-gray-600 dark:text-gray-300">{description}</p>
-    </div>
-  );
-}
-
-function StepCard({ number, title, description }) {
-  return (
-    <div className="text-center">
-      <div className="w-16 h-16 bg-blue-900 dark:bg-gold text-white dark:text-gray-900 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-        {number}
-      </div>
-      <h3 className="text-xl font-bold text-blue-900 dark:text-white mb-2">{title}</h3>
-      <p className="text-gray-600 dark:text-gray-300">{description}</p>
-    </div>
-  );
-}
-
-function FAQItem({ question, answer }) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className="border-b border-gray-200 dark:border-gray-700">
-      <button
-        className="w-full text-right py-4 flex justify-between items-center"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <ChevronDown
-          className={`w-6 h-6 text-blue-900 dark:text-gold transform transition-transform ${
-            isOpen ? 'rotate-180' : ''
-          }`}
-        />
-        <span className="text-lg font-semibold text-blue-900 dark:text-white">{question}</span>
-      </button>
-      {isOpen && (
-        <div className="pb-4 text-right">
-          <p className="text-gray-600 dark:text-gray-300">{answer}</p>
-        </div>
-      )}
     </div>
   );
 }
